@@ -5,16 +5,18 @@ const cors = require('cors')
 require('dotenv').config()
 const port = process.env.PORT || 5000;
 
+app.use(cors());
+
 //middleware
-app.use(cors({
-    origin: [
-        "http://localhost:5173",
-        "https://ayojon-b31c3.web.app"
-    ],
-    credentials: true,
-    optionSuccessStatus: 200,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
-}));
+// app.use(cors({
+//     origin: [
+//         "http://localhost:5173" ,
+      
+//     ],
+//     credentials: true,
+//     optionSuccessStatus: 200,
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
+// }));
 app.use(express.json());
 
 
@@ -50,7 +52,7 @@ async function run() {
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
     } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+        // await client.close();
     }
 }
 run().catch(console.dir);
