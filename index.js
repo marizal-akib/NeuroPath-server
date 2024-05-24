@@ -7,16 +7,16 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 
-//middleware
-// app.use(cors({
-//     origin: [
-//         "http://localhost:5173" ,
+middleware
+app.use(cors({
+    origin: [
+        "http://localhost:5173" ,
       
-//     ],
-//     credentials: true,
-//     optionSuccessStatus: 200,
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
-// }));
+    ],
+    credentials: true,
+    optionSuccessStatus: 200,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
+}));
 app.use(express.json());
 
 
